@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FightingObesityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActivitiesChart">
+          <Key>
+            <PropertyRef Name="ActivitiesChartID" />
+          </Key>
+          <Property Name="ActivitiesChartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Indoor" Type="nvarchar(max)" />
+          <Property Name="Outdoor" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Recipes">
+          <Key>
+            <PropertyRef Name="RecipesID" />
+          </Key>
+          <Property Name="RecipesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Breakfast" Type="nvarchar(max)" />
+          <Property Name="Snack" Type="nvarchar(max)" />
+          <Property Name="Lunch" Type="nvarchar(max)" />
+          <Property Name="Dinner" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="FightingObesityModelStoreContainer">
+          <EntitySet Name="ActivitiesChart" EntityType="Self.ActivitiesChart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FightingObesityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActivitiesChart">
+          <Key>
+            <PropertyRef Name="ActivitiesChartID" />
+          </Key>
+          <Property Name="ActivitiesChartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Indoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Outdoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipesID" />
+          </Key>
+          <Property Name="RecipesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Breakfast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Snack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lunch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dinner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FightingObesityEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActivitiesCharts" EntityType="Self.ActivitiesChart" />
+          <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FightingObesityModelStoreContainer" CdmEntityContainer="FightingObesityEntities2">
+          <EntitySetMapping Name="ActivitiesCharts">
+            <EntityTypeMapping TypeName="FightingObesityModel.ActivitiesChart">
+              <MappingFragment StoreEntitySet="ActivitiesChart">
+                <ScalarProperty Name="ActivitiesChartID" ColumnName="ActivitiesChartID" />
+                <ScalarProperty Name="Indoor" ColumnName="Indoor" />
+                <ScalarProperty Name="Outdoor" ColumnName="Outdoor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipes">
+            <EntityTypeMapping TypeName="FightingObesityModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipes">
+                <ScalarProperty Name="RecipesID" ColumnName="RecipesID" />
+                <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+                <ScalarProperty Name="Snack" ColumnName="Snack" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="Dinner" ColumnName="Dinner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
