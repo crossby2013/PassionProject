@@ -26,6 +26,8 @@ namespace FightObesity.Models
         }
     
         public virtual DbSet<ActivitiesChart> ActivitiesCharts { get; set; }
-        public virtual DbSet<Recipe> Recipes { get; set; }
+        public virtual DbSet<Breakfast> Breakfasts { get; set; }
+        public virtual DbSet<Lunch> Lunches { get; set; }
+        public virtual DbSet<Snack> Snacks { get; set; }
     }
 }

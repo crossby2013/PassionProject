@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FightingObesityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FightingObesityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivitiesChart">
           <Key>
             <PropertyRef Name="ActivitiesChartID" />
@@ -13,22 +13,40 @@
           <Property Name="Indoor" Type="nvarchar(max)" />
           <Property Name="Outdoor" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="Recipes">
+        <EntityType Name="Breakfast">
           <Key>
-            <PropertyRef Name="RecipesID" />
+            <PropertyRef Name="BreakfastID" />
           </Key>
-          <Property Name="RecipesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Breakfast" Type="nvarchar(max)" />
-          <Property Name="Snack" Type="nvarchar(max)" />
-          <Property Name="Lunch" Type="nvarchar(max)" />
-          <Property Name="Dinner" Type="nvarchar(max)" />
+          <Property Name="BreakfastID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ingredients" Type="nvarchar(max)" />
+          <Property Name="Instructions" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Lunch">
+          <Key>
+            <PropertyRef Name="LunchID" />
+          </Key>
+          <Property Name="LunchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ingredients" Type="nvarchar(max)" />
+          <Property Name="Instructions" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Snack">
+          <Key>
+            <PropertyRef Name="SnackID" />
+          </Key>
+          <Property Name="SnackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ingredients" Type="nvarchar(max)" />
+          <Property Name="Instructions" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="FightingObesityModelStoreContainer">
           <EntitySet Name="ActivitiesChart" EntityType="Self.ActivitiesChart" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Breakfast" EntityType="Self.Breakfast" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lunch" EntityType="Self.Lunch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Snack" EntityType="Self.Snack" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FightingObesityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -40,20 +58,39 @@
           <Property Name="Indoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Outdoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Recipe">
-          <Key>
-            <PropertyRef Name="RecipesID" />
-          </Key>
-          <Property Name="RecipesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Breakfast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Snack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Lunch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Dinner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityContainer Name="FightingObesityEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ActivitiesCharts" EntityType="Self.ActivitiesChart" />
-          <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+          <EntitySet Name="Breakfasts" EntityType="FightingObesityModel.Breakfast" />
+          <EntitySet Name="Lunches" EntityType="FightingObesityModel.Lunch" />
+          <EntitySet Name="Snacks" EntityType="FightingObesityModel.Snack" />
         </EntityContainer>
+        <EntityType Name="Breakfast">
+          <Key>
+            <PropertyRef Name="BreakfastID" />
+          </Key>
+          <Property Name="BreakfastID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ingredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Lunch">
+          <Key>
+            <PropertyRef Name="LunchID" />
+          </Key>
+          <Property Name="LunchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ingredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Snack">
+          <Key>
+            <PropertyRef Name="SnackID" />
+          </Key>
+          <Property Name="SnackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ingredients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -69,14 +106,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Recipes">
-            <EntityTypeMapping TypeName="FightingObesityModel.Recipe">
-              <MappingFragment StoreEntitySet="Recipes">
-                <ScalarProperty Name="RecipesID" ColumnName="RecipesID" />
-                <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
-                <ScalarProperty Name="Snack" ColumnName="Snack" />
-                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
-                <ScalarProperty Name="Dinner" ColumnName="Dinner" />
+          <EntitySetMapping Name="Breakfasts">
+            <EntityTypeMapping TypeName="FightingObesityModel.Breakfast">
+              <MappingFragment StoreEntitySet="Breakfast">
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+                <ScalarProperty Name="Ingredients" ColumnName="Ingredients" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="BreakfastID" ColumnName="BreakfastID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lunches">
+            <EntityTypeMapping TypeName="FightingObesityModel.Lunch">
+              <MappingFragment StoreEntitySet="Lunch">
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+                <ScalarProperty Name="Ingredients" ColumnName="Ingredients" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="LunchID" ColumnName="LunchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Snacks">
+            <EntityTypeMapping TypeName="FightingObesityModel.Snack">
+              <MappingFragment StoreEntitySet="Snack">
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+                <ScalarProperty Name="Ingredients" ColumnName="Ingredients" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="SnackID" ColumnName="SnackID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

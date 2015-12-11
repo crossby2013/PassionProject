@@ -6,7 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="31adbc2632dd4f058c7e0d7f8b3212cf" Name="Diagram1">
         <EntityTypeShape EntityType="FightingObesityModel.ActivitiesChart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FightingObesityModel.Recipe" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FightingObesityModel.Breakfast" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FightingObesityModel.Lunch" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FightingObesityModel.Snack" Width="1.5" PointX="4.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

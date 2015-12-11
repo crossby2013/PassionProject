@@ -1,50 +1,71 @@
-﻿@model IEnumerable<FightObesity.Models.Recipe>
+﻿
+@model IEnumerable<FightObesity.Models.Recipe>
 
 @{
     ViewBag.Title = "Index";
 }
 
+    <link href="~/Views/Recipes/columns.css" rel="stylesheet" />
+
 <h2>Fun Meals</h2>
 <p> Some meals the child can prepare themselves!!</p>
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Breakfast)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Snack)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lunch)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dinner)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+       
+  <tr>
+            <th>
+                
+               @Html.DisplayNameFor(model => model.Breakfast)
+            
+            </th>
+            <th>
+                
+                    @Html.DisplayNameFor(model => model.Snack)
+              
+            </th>
+            <th>
+                
+                    @Html.DisplayNameFor(model => model.Lunch)
+               
+            </th>
+            <th>
+                
+                    @Html.DisplayNameFor(model => model.Dinner)
+             
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Breakfast)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Snack)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lunch)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dinner)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecipesID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RecipesID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecipesID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Breakfast)
+                    
+                </td>
+                <td>
+                   
+                        @Html.DisplayFor(modelItem => item.Snack)
+                    
+                </td>
+                <td>
+                    
+                        @Html.DisplayFor(modelItem => item.Lunch)
+                   
+                </td>
+                <td>
+                    
+                        @Html.DisplayFor(modelItem => item.Dinner)
+                    
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RecipesID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RecipesID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RecipesID })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

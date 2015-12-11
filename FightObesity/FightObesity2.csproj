@@ -162,14 +162,19 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActivitiesChartsController.cs" />
+    <Compile Include="Controllers\BreakfastsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LunchesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\SnacksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ActivitiesChart.cs">
+      <DependentUpon>HealthModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Breakfast.cs">
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HealthModel.Context.cs">
@@ -188,8 +193,11 @@
       <DependentUpon>HealthModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lunch.cs">
+      <DependentUpon>HealthModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Recipe.cs">
+    <Compile Include="Models\Snack.cs">
       <DependentUpon>HealthModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,6 +207,21 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Carousel.css" />
+    <Content Include="Content\Pictures\apples.PNG" />
+    <Content Include="Content\Pictures\banana.PNG" />
+    <Content Include="Content\Pictures\BLT.PNG" />
+    <Content Include="Content\Pictures\burrito.PNG" />
+    <Content Include="Content\Pictures\chicken.PNG" />
+    <Content Include="Content\Pictures\kabob.PNG" />
+    <Content Include="Content\Pictures\lunchable.PNG" />
+    <Content Include="Content\Pictures\new pb&amp;j.PNG" />
+    <Content Include="Content\Pictures\oatmeal.PNG" />
+    <Content Include="Content\Pictures\parfait.PNG" />
+    <Content Include="Content\Pictures\pita.PNG" />
+    <Content Include="Content\Pictures\smoothie.PNG" />
+    <Content Include="Content\Pictures\trail mix.PNG" />
+    <Content Include="Content\Pictures\tuna.PNG" />
+    <Content Include="Content\Pictures\veggies.PNG" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -235,7 +258,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Recipes\columns.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -276,11 +298,21 @@
     <Content Include="Views\ActivitiesCharts\Details.cshtml" />
     <Content Include="Views\ActivitiesCharts\Edit.cshtml" />
     <Content Include="Views\ActivitiesCharts\Index.cshtml" />
-    <Content Include="Views\Recipes\Create.cshtml" />
-    <Content Include="Views\Recipes\Delete.cshtml" />
-    <Content Include="Views\Recipes\Details.cshtml" />
-    <Content Include="Views\Recipes\Edit.cshtml" />
-    <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Breakfasts\Create.cshtml" />
+    <Content Include="Views\Breakfasts\Delete.cshtml" />
+    <Content Include="Views\Breakfasts\Details.cshtml" />
+    <Content Include="Views\Breakfasts\Edit.cshtml" />
+    <Content Include="Views\Breakfasts\Index.cshtml" />
+    <Content Include="Views\Lunches\Create.cshtml" />
+    <Content Include="Views\Lunches\Delete.cshtml" />
+    <Content Include="Views\Lunches\Details.cshtml" />
+    <Content Include="Views\Lunches\Edit.cshtml" />
+    <Content Include="Views\Lunches\Index.cshtml" />
+    <Content Include="Views\Snacks\Create.cshtml" />
+    <Content Include="Views\Snacks\Delete.cshtml" />
+    <Content Include="Views\Snacks\Details.cshtml" />
+    <Content Include="Views\Snacks\Edit.cshtml" />
+    <Content Include="Views\Snacks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
